@@ -2,8 +2,10 @@
 title: My Second Post!
 date: "2015-05-06T23:46:37.121Z"
 mainImage: "./salty_egg.jpg"
-tags: ["boorowa", "another tag"]
-category: ["boorowa"]
+tags:
+  - gardening
+category:
+  - gardening
 author: "David James"
 
 ---

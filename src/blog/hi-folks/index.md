@@ -3,7 +3,8 @@ title: New Beginnings
 date: "2015-05-28T22:40:32.169Z"
 mainImage: "./image.jpg"
 tags: ["harden", "bunny", "wazzarp",]
-category: ["harden"]
+category:
+  - gardening
 author: "Dustin Schau"
 
 ---

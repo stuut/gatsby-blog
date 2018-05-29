@@ -84,25 +84,27 @@ if (typeof window !== `undefined`) {
          </Menu>
 
        </div>
-          <Link to={'/'}>
-            <img
-              src={logoPic}
-              alt={'Hilltops Phoenix'}
-              className="logo"
-            />
-          </Link>
+       <div>
+          <div>
+            <Link to={'/'}>
+              <img
+                src={logoPic}
+                alt={'Hilltops Phoenix'}
+                className="logo"
+              />
+            </Link>
+          </div>
           <div className="sub-menu">
-
-              {group.map(category => (
-                <li style={{ display:'inline', textDecoration:'none', listStyleType:'none', marginRight: '1rem',}} key={category.fieldValue}>
-                  <Link to={`/category/${kebabCase(category.fieldValue)}/`} activeStyle={{color: '#8fc744'}} style={{boxShadow:'none', textTransform:'uppercase',}}>
-                    {category.fieldValue}
-                  </Link>
-                </li>
-              ))}
-
+                {group.map(category => (
+                  <li style={{ display:'inline', textDecoration:'none', listStyleType:'none', marginRight: '1rem',}} key={category.fieldValue}>
+                    <Link to={`/category/${kebabCase(category.fieldValue)}/`} activeStyle={{color: '#8fc744'}} style={{boxShadow:'none', textTransform:'uppercase',}}>
+                      {category.fieldValue}
+                    </Link>
+                  </li>
+                ))}
           </div>
         </div>
+      </div>
 </div>
       )
 

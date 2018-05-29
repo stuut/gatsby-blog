@@ -11,9 +11,9 @@ export default ({ data }) => {
     <div>
     <Helmet title={data.site.siteMetadata.title} />
       <div>
-        <h2>HARDEN</h2>
+        <h2>GARDENING</h2>
         <div style = {{display:'flex'}}>
-          {data.harden.edges.map(({ node }) => (
+          {data.gardening.edges.map(({ node }) => (
             <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
               <div key={node.id}>
               <Img sizes={node.frontmatter.mainImage.childImageSharp.sizes}/>
@@ -28,8 +28,8 @@ export default ({ data }) => {
         </div>
       </div>
       <div>
-        <h2>YOUNG</h2>
-        {data.young.edges.map(({ node }) => (
+        <h2>SUSTAINABILITY</h2>
+        {data.sustainability.edges.map(({ node }) => (
           <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
             <div key={node.id}>
             <Img sizes={node.frontmatter.mainImage.childImageSharp.sizes}/>
@@ -43,8 +43,8 @@ export default ({ data }) => {
         ))}
       </div>
       <div>
-        <h2>BOOROWA</h2>
-        {data.boorowa.edges.map(({ node }) => (
+        <h2>LANDSCAPING</h2>
+        {data.landscaping.edges.map(({ node }) => (
           <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
             <div key={node.id}>
             <Img sizes={node.frontmatter.mainImage.childImageSharp.sizes}/>
@@ -71,9 +71,9 @@ export const pageQuery = graphql`
       }
     }
 
-        harden: allMarkdownRemark(
+        gardening: allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
-          filter:{ frontmatter: {category: {eq: "harden"}}}
+          filter:{ frontmatter: {category: {eq: "gardening"}}}
           ) {
           edges {
             node {
@@ -98,9 +98,9 @@ export const pageQuery = graphql`
             }
           }
     		}
-        boorowa: allMarkdownRemark(
+        landscaping: allMarkdownRemark(
             sort: { fields: [frontmatter___date], order: DESC }
-            filter:{ frontmatter: {category: {eq: "boorowa"}}}
+            filter:{ frontmatter: {category: {eq: "landscaping"}}}
             ) {
             edges {
               node {
@@ -125,9 +125,9 @@ export const pageQuery = graphql`
               }
             }
           }
-          young: allMarkdownRemark(
+          sustainability: allMarkdownRemark(
                 sort: { fields: [frontmatter___date], order: DESC }
-                filter:{ frontmatter: {category: {eq: "young"}}}
+                filter:{ frontmatter: {category: {eq: "sustainability"}}}
                 ) {
                 edges {
                   node {

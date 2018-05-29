@@ -2,10 +2,10 @@
 date: '2018-05-29'
 title: Lorem ipsum dolor amet
 tags:
-  - harden
+  - gardening
 author: Benjamin Read
 category:
-  - harden
+  - gardening
 mainImage: ./img/harden-canola_fields_harden_photo_paul_foley.jpg
 ---
 Lorem ipsum dolor amet sriracha post-ironic hammock wayfarers. Artisan cloud bread actually mlkshk street art raw denim chia occupy retro organic poke adaptogen meggings raclette. Echo park brunch direct trade, thundercats enamel pin fixie jianbing. Fanny pack forage cardigan craft beer master cleanse poutine intelligentsia man braid. Hammock iceland vape, coloring book bespoke shoreditch flannel squid fanny pack neutra cloud bread.

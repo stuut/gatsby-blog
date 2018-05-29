@@ -1,9 +1,10 @@
 ---
-title: Hello Harden 3
+title: dirty stuff
 date: "2014-05-01T22:12:03.284Z"
 mainImage: "./salty_egg.jpg"
 tags: ["fake", "blah"]
-category: ["harden"]
+category:
+  - gardening
 author: "Benjamin Read"
 
 ---

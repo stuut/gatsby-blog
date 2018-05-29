@@ -1,9 +1,10 @@
 ---
-title: Hello Harden 2
+title: Gardening stuff
 date: "2015-05-01T22:12:03.284Z"
 mainImage: "./salty_egg.jpg"
 tags: ["fake", "blah"]
-category: ["harden"]
+category:
+  - landscaping
 author: "Benjamin Read"
 
 ---
