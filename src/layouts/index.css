@@ -55,15 +55,11 @@ a:hover{
   flex-wrap: wrap;
 }
 .row > .card{
-  width:25%;
-  padding:1%;
+  width:33.333%;
+  padding:1rem;
   display: flex;
 }
-@media screen and (max-width:990px){
-  .row > .card{
-    width:33.333%;
-  }
-}
+
 @media screen and (max-width:768px){
   .row > .card{
     width:50%;

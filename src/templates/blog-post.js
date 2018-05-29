@@ -17,8 +17,10 @@ class BlogPostTemplate extends React.Component {
       <div className="postCard">
         <div>
       <Img sizes={post.frontmatter.mainImage.childImageSharp.sizes} className={className} style={{ width: '100%'}}/>
-      <TagsSection tags={this.props.data.markdownRemark.frontmatter.tags} />
       <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+      <div className="postText">
+      <TagsSection tags={this.props.data.markdownRemark.frontmatter.tags} />
+
         <h1>{post.frontmatter.title}</h1>
         <p
           style={{
@@ -74,7 +76,7 @@ class BlogPostTemplate extends React.Component {
           <p>{post.frontmatter.author.bio}</p>
 
         </div>
-
+</div>
 
           </div>
         </div>

@@ -21,7 +21,6 @@ const TagsSection = ({ tags }) => {
         display: 'block',
         marginBottom: '.5rem',
         fontSize: '.7rem',
-        paddingLeft: '2%',
       }}
     >
       Tagged with {tagLinks}

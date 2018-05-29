@@ -65,7 +65,7 @@ class categoryRoute extends React.Component {
     return (
       <div>
        <div>
-          {chunk(posts.slice(0, this.state.postsToShow), 4).map((chunk, i) => (
+          {chunk(posts.slice(0, this.state.postsToShow), 3).map((chunk, i) => (
             <div className="row" key={`chunk-${i}`} >
                 {chunk.map(node => (
                   <div className="card" >
@@ -73,8 +73,9 @@ class categoryRoute extends React.Component {
                       <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                       <Img resolutions={node.frontmatter.mainImage.childImageSharp.resolutions} style={{ width: '100%', paddingBottom:'66.6667%',}}/>
                       </Link>
-                      <TagsSection tags={node.frontmatter.tags} />
+
                       <div className="postText">
+                        <TagsSection tags={node.frontmatter.tags} />
                         <h3
                           style={{
                             marginBottom: '1rem',
