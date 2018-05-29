@@ -13,7 +13,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
-      <div>
+      <div style={{padding:"1rem"}}>
       <div className="postCard">
         <div>
       <Img sizes={post.frontmatter.mainImage.childImageSharp.sizes} className={className} style={{ width: '100%'}}/>
