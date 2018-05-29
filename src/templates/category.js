@@ -64,11 +64,10 @@ class categoryRoute extends React.Component {
 
     return (
       <div>
-       <div>
-          {chunk(posts.slice(0, this.state.postsToShow), 3).map((chunk, i) => (
-            <div className="row" key={`chunk-${i}`} >
+       <div className="row" >
+          {chunk(posts.slice(0, this.state.postsToShow), 1).map((chunk, i) => (
+            <div className="card" key={`chunk-${i}`} >
                 {chunk.map(node => (
-                  <div className="card" >
                     <div key={node.fields.slug}>
                       <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                       <Img resolutions={node.frontmatter.mainImage.childImageSharp.resolutions} style={{ width: '100%', paddingBottom:'66.6667%',}}/>
@@ -90,7 +89,6 @@ class categoryRoute extends React.Component {
                         <p style={{ fontSize: '.8rem'}} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                       </div>
                     </div>
-                  </div>
                 ))}
               </div>
             ))}

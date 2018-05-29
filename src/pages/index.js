@@ -11,53 +11,68 @@ export default ({ data }) => {
     <div>
     <Helmet title={data.site.siteMetadata.title} />
       <div>
-        <h2>GARDENING</h2>
-        <div style = {{display:'flex'}}>
+        <h2 style={{paddingLeft:'1rem', paddingTop:'1rem'}}>GARDENING</h2>
+        <div className="row" >
           {data.gardening.edges.map(({ node }) => (
-            <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-              <div key={node.id}>
-              <Img sizes={node.frontmatter.mainImage.childImageSharp.sizes}/>
-                <h3>
-                  {node.frontmatter.title}{" "}
-                  <p>{node.frontmatter.date}</p>
-                </h3>
-                <p>{node.excerpt}</p>
+            <div className='card'>
+             <div>
+              <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                <div key={node.id}>
+                <Img resolutions={node.frontmatter.mainImage.childImageSharp.resolutions} style={{ width: '100%', paddingBottom:'66.6667%',}}/>
+                <div className="postText">
+                  <p className="tab">{node.frontmatter.date}</p>
+                  <h3>{node.frontmatter.title}{" "}</h3>
+                  <p>{node.excerpt}</p>
+                </div>
+                </div>
+               </Link>
               </div>
-             </Link>
-           ))}
+            </div>
+          ))}
         </div>
       </div>
       <div>
-        <h2>SUSTAINABILITY</h2>
+      <h2 style={{paddingLeft:'1rem', paddingTop:'1rem'}}>SUSTAINABILITY</h2>
+      <div className="row" >
         {data.sustainability.edges.map(({ node }) => (
-          <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-            <div key={node.id}>
-            <Img sizes={node.frontmatter.mainImage.childImageSharp.sizes}/>
-              <h3>
-                {node.frontmatter.title}{" "}
-                <p>{node.frontmatter.date}</p>
-              </h3>
-              <p>{node.excerpt}</p>
+          <div className='card'>
+           <div>
+            <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+              <div key={node.id}>
+              <Img resolutions={node.frontmatter.mainImage.childImageSharp.resolutions} style={{ width: '100%', paddingBottom:'66.6667%',}}/>
+              <div className="postText">
+                <p className="tab">{node.frontmatter.date}</p>
+                <h3>{node.frontmatter.title}{" "}</h3>
+                <p>{node.excerpt}</p>
+              </div>
+              </div>
+             </Link>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
+    </div>
       <div>
-        <h2>LANDSCAPING</h2>
+      <h2 style={{paddingLeft:'1rem', paddingTop:'1rem'}}>LANDSCAPING</h2>
+      <div className="row" >
         {data.landscaping.edges.map(({ node }) => (
-          <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-            <div key={node.id}>
-            <Img sizes={node.frontmatter.mainImage.childImageSharp.sizes}/>
-              <h3>
-                {node.frontmatter.title}{" "}
-                <p>{node.frontmatter.date}</p>
-              </h3>
-              <p>{node.excerpt}</p>
+          <div className='card'>
+           <div>
+            <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+              <div key={node.id}>
+              <Img resolutions={node.frontmatter.mainImage.childImageSharp.resolutions} style={{ width: '100%', paddingBottom:'66.6667%',}}/>
+              <div className="postText">
+                <p className="tab">{node.frontmatter.date}</p>
+                <h3>{node.frontmatter.title}{" "}</h3>
+                <p>{node.excerpt}</p>
+              </div>
+              </div>
+             </Link>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
-
+    </div>
 
     </div>
   );
@@ -72,6 +87,7 @@ export const pageQuery = graphql`
     }
 
         gardening: allMarkdownRemark(
+          limit: 3
           sort: { fields: [frontmatter___date], order: DESC }
           filter:{ frontmatter: {category: {eq: "gardening"}}}
           ) {
@@ -88,8 +104,11 @@ export const pageQuery = graphql`
                 category
                 mainImage {
                   childImageSharp {
-                    sizes(maxWidth: 768,) {
-                      ...GatsbyImageSharpSizes
+                    resolutions(width: 300 quality: 70) {
+                      src
+                      srcSet
+                      base64
+
                     }
                   }
                 }
@@ -99,6 +118,7 @@ export const pageQuery = graphql`
           }
     		}
         landscaping: allMarkdownRemark(
+            limit: 3
             sort: { fields: [frontmatter___date], order: DESC }
             filter:{ frontmatter: {category: {eq: "landscaping"}}}
             ) {
@@ -115,8 +135,11 @@ export const pageQuery = graphql`
                   category
                   mainImage {
                     childImageSharp {
-                      sizes(maxWidth: 768, ) {
-                        ...GatsbyImageSharpSizes
+                      resolutions(width: 300 quality: 70) {
+                        src
+                        srcSet
+                        base64
+
                       }
                     }
                   }
@@ -126,6 +149,7 @@ export const pageQuery = graphql`
             }
           }
           sustainability: allMarkdownRemark(
+                limit: 3
                 sort: { fields: [frontmatter___date], order: DESC }
                 filter:{ frontmatter: {category: {eq: "sustainability"}}}
                 ) {
@@ -142,8 +166,11 @@ export const pageQuery = graphql`
                       category
                       mainImage {
                         childImageSharp {
-                          sizes(maxWidth: 768,) {
-                            ...GatsbyImageSharpSizes
+                          resolutions(width: 300 quality: 70) {
+                            src
+                            srcSet
+                            base64
+
                           }
                         }
                       }
