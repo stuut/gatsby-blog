@@ -8,12 +8,14 @@ import '../layouts/index.css'
 import chunk from "lodash/chunk"
 import { kebabCase } from 'lodash'
 import TagsSection from "../components/tags-section"
+import Masonry from 'react-masonry-component'
+
 
 
 
 
 if (typeof window !== `undefined`) {
-window.postsToShow = 4
+window.postsToShow = 21
 }
 
 class categoryRoute extends React.Component {
@@ -28,14 +30,14 @@ class categoryRoute extends React.Component {
 
       constructor() {
         super()
-        let postsToShow = 4
+        let postsToShow = 21
         if (typeof window !== `undefined`) {
           postsToShow = window.postsToShow
         }
 
 
         this.state = {
-          showingMore: postsToShow > 4,
+          showingMore: postsToShow > 21,
           postsToShow,
         }
       }
@@ -64,13 +66,13 @@ class categoryRoute extends React.Component {
 
     return (
       <div>
-       <div className="row" >
+       <Masonry  className="row">
           {chunk(posts.slice(0, this.state.postsToShow), 1).map((chunk, i) => (
             <div className="card" key={`chunk-${i}`} >
                 {chunk.map(node => (
                     <div key={node.fields.slug}>
                       <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                      <Img resolutions={node.frontmatter.mainImage.childImageSharp.resolutions} style={{ width: '100%', paddingBottom:'66.6667%',}}/>
+                      <Img sizes={node.frontmatter.mainImage.childImageSharp.sizes} style={{ width: '100%'}}/>
                       </Link>
 
                       <div className="postText">
@@ -92,7 +94,7 @@ class categoryRoute extends React.Component {
                 ))}
               </div>
             ))}
-          </div>
+          </Masonry>
 
         {!this.state.showingMore && (
           <a className="loadMore"
@@ -142,11 +144,8 @@ export const categoryPageQuery = graphql`
             tags
             mainImage {
               childImageSharp {
-                resolutions(width: 300 quality: 70) {
-                  src
-                  srcSet
-                  base64
-
+                sizes(maxWidth: 400 ) {
+                  ...GatsbyImageSharpSizes
                 }
               }
             }
