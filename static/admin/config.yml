@@ -11,10 +11,10 @@ collections:
     folder: src/blog
     create: true
     fields:
-      - {  label: Date, name: date,widget: date }
-      - {  label: Title, name: title,}
-      - {  label: Body, name: body, widget: markdown }
+      - { label: Date, name: date,widget: date }
+      - { label: Title, name: title,}
+      - { label: Body, name: body, widget: markdown }
       - { label: Tags, name: tags, widget: list}
       - { label: author, name: author, }
-      - { label: category, name: category, widget: select, options: ['Gardening', 'Landscaping', 'Sustainability']}
       - { label: mainImage, name: mainImage, widget: image}
+      - {label: "Select", name: "select", widget: "select", options: [{ label: "gardening", value: "['gardening']" }, { label: "sustainability", value: "['sustainability']" }, { label: "landscaping", value: "['landscaping']" }]}
