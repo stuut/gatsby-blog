@@ -1,15 +1,53 @@
+const query = `{
+  allMarkdownRemark{
+    edges {
+      node {
+        # try to find a unique id for each node
+        # if this field is absent, it's going to
+        # be inserted by Algolia automatically
+        # and will be less simple to update etc.
+        objectID: id
+        fields {
+          slug
+        }
+        internal {
+          content
+        }
+        frontmatter {
+          title
+        }
+      }
+    }
+  }
+}`;
+const queries = [
+  {
+    query,
+    transformer: ({ data }) => data.allMarkdownRemark.edges.map(({ node }) => node) // optional
+  }
+];
 module.exports = {
   siteMetadata: {
-    title: 'Hilltops Phoenix',
+    title: 'More Than Mulch',
     author: 'Daniel Stuut',
     description: 'blog template.',
-    siteUrl: 'www.stuut.com.au',
+    siteUrl: 'www.morethanmulch.com.au',
   },
   mapping: {
     "MarkdownRemark.frontmatter.author": `AuthorYaml`,
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+      appId: 'XO41XKK6M6',
+      apiKey: 'c64f3a6ff1a39506621a4cf04600641f',
+      indexName: "morethanmulch", // for all queries
+      queries,
+      chunkSize: 10000, // default: 1000
+      },
+    },
     {
     resolve: `gatsby-plugin-manifest`,
     options: {
