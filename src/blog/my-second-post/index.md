@@ -4,8 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 mainImage: "./salty_egg.jpg"
 tags:
   - gardening
-category:
-  - gardening
+category: ["gardening"]
 author: "David James"
 
 ---

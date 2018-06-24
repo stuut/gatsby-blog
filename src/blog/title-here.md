@@ -7,8 +7,5 @@ author: Dustin Schau
 mainImage: /img/backgroundcountry.jpg
 category:
   - gardening
-galleryImages:
-  - - c
-  - - c
 ---
 scascdcsd

@@ -17,4 +17,4 @@ collections:
       - { label: Tags, name: tags, widget: list}
       - { label: author, name: author, }
       - { label: mainImage, name: mainImage, widget: image}
-      - {label: "Select", name: "select", widget: "select", options: [{ label: "gardening", value: "[gardening]" }, { label: "sustainability", value: "[sustainability]" }, { label: "landscaping", value: "[landscaping]" }]}
+      - { label: "category", name: 'category', widget: 'list'}
