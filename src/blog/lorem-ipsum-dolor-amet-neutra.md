@@ -1,6 +1,6 @@
 ---
 date: '2018-06-29'
-title: Lorem ipsum dolor amet neutra
+title: 'new post '
 tags:
   - harden
 author: Dustin Schau
