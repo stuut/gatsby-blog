@@ -4,7 +4,7 @@ title: Lorem ipsum dolor amet neutra
 tags:
   - gardening
   - sustainability
-mainImage: /img/gettyimages-165831199-56d751df3df78cfb37da972c.jpg
+mainImage: /img/harden-canola_fields_harden_photo_paul_foley.jpg
 category:
   - gardening
 author: Dustin Schau
