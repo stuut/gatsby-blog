@@ -7,6 +7,6 @@ mainImage: /img/backgroundcountry.jpg
 category:
   - gardening
 author: Kyle Mathews
-airport-code: ORD
+airport-code: '[''ORD'']'
 ---
 body copy
