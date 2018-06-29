@@ -3,7 +3,7 @@ backend:
   repo: stuut/gatsby-blog
 
 media_folder: static/img
-public_folder: ./img
+public_folder: /img
 
 collections:
   - name: blog
@@ -13,9 +13,9 @@ collections:
     fields:
       - { label: Date, name: date,widget: date }
       - { label: Title, name: title,}
+      - { label: mainImage, name: mainImage, widget: image }
       - { label: Body, name: body, widget: markdown }
       - { label: Tags, name: tags, widget: list}
-      - { label: mainImage, name: mainImage, widget: image}
       - { label: "category", name: 'category', widget: list}
       - label: author
         name: author
