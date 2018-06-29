@@ -3,7 +3,7 @@ backend:
   repo: stuut/gatsby-blog
 
 media_folder: static/img
-public_folder: static
+public_folder: /img
 
 collections:
   - name: blog
