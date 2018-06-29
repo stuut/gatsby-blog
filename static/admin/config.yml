@@ -3,7 +3,7 @@ backend:
   repo: stuut/gatsby-blog
 
 media_folder: static/img
-public_folder: /img
+public_folder: static/img
 
 collections:
   - name: blog
@@ -15,6 +15,13 @@ collections:
       - { label: Title, name: title,}
       - { label: Body, name: body, widget: markdown }
       - { label: Tags, name: tags, widget: list}
-      - { label: author, name: author, }
       - { label: mainImage, name: mainImage, widget: image}
-      - { label: "category", name: 'category', widget: 'list'}
+      - { label: "category", name: 'category', widget: list}
+      - label: author
+        name: author
+        widget: select
+        options:
+          - Kyle Mathews
+          - Dustin Schau
+          - Kostas Bariotis
+          - Tim Arney
