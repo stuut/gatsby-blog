@@ -3,7 +3,7 @@ date: '2018-06-29'
 title: garden forks
 tags:
   - gardening
-mainImage: /img/gettyimages-165831199-56d751df3df78cfb37da972c.jpg
+mainImage: /static/img/gettyimages-165831199-56d751df3df78cfb37da972c.jpg
 category:
   - gardening
 author: Dustin Schau
