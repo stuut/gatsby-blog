@@ -22,7 +22,7 @@ exports.onCreateNode = ({
     if (typeof node.frontmatter.mainImage === 'string') {
       // Find absolute path of linked path
       const pathToFile = path
-        .join(__dirname, 'static', node.frontmatter.mainImage)
+        .join(__dirname, 'static/img', node.frontmatter.mainImage)
         .split(path.sep)
         .join('/');
 
